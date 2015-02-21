@@ -53,6 +53,10 @@ footer .container{
 	width: 285px;
 }
 
+.submitCommentBtn:hover{
+	cursor: pointer;
+}
+
 .comments{
 	float: right;
 	width: 570px;
