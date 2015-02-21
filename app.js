@@ -4,7 +4,8 @@ var main = function()
 
 	//window.alert("hello Vane");
 	$(".comment-input button").on("click", function(event){
-		console.log("hello Vane!");
+		//console.log("hello Vane!");
+		$(".comments").append("<p>This is a new comment!</p>");
 	});
 };
 
