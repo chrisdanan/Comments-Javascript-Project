@@ -4,3 +4,99 @@
 	margin: 0px;
 	padding: 0px;
 }
+
+body{
+	background-color: #ddffad;
+	font-family: "Quicksand", sans-serif;
+	font-size: 100%;
+}
+
+header, main, footer{
+	overflow: auto;
+}
+
+header .container, main .container, footer .container{
+	max-width: 855px;
+	margin: auto;
+	/*border: 1px dashed red;*/
+}
+
+header .container{
+	/*border: 1px dashed #000000;*/
+}
+
+
+main .container{
+	border-bottom: 1px solid #bac7ab;
+}
+
+
+footer .container{
+	border-top: 1px solid #bac7ab;
+}
+
+#title{
+	float:left;
+	width: 285px;
+	/*border: 1px solid blue;*/
+}
+
+#description{
+	font-style: italic;
+	float: right;
+	width: 570px;
+	/*border: 1px solid blue;*/
+}
+
+.comment-input{
+	float: left;
+	width: 285px;
+}
+
+.comments{
+	float: right;
+	width: 570px;
+}
+
+.comments p{
+	border-radius: 10px; /*Give the comments a rounded edge*/
+	padding: 5px;
+	margin: 10px;
+	border: 1px solid #000000;
+}
+
+.inputComment{
+	font-size: 15pt;
+	border-radius: 5px;
+	border: none;
+}
+
+.submitCommentBtn{
+	/*Give some space between the comment input text box and the submit button*/
+	margin-left: 3px;
+	/*Give button dark green bg-color*/
+	background-color: #4f9201;
+	/*Make "+" white and enlarge it*/
+	color: white;
+	font-size: 1.1em;
+	/*Give the button a 3d looking border*/
+	/*
+	border-top: 3px solid #75d603;
+	border-left: 3px solid #80ee00;
+	border-right: 3px solid #2d5400;
+	border-bottom: 3px solid #244200;
+	*/
+	/*Give the button a sleek looking border*/
+	border-radius: 3px;
+	border: 3px solid #4f9201;
+}
+
+/*Even numbered comments have an orange background color*/
+.comments p:nth-child(even){
+	background-color: #fbb276;
+}
+
+/*Odd numbered comments have a blue background color*/
+.comments p:nth-child(odd){
+	background-color: #a6f4ee;
+}

@@ -3,31 +3,39 @@
 	<head>
 		<title>A Simple App</title>
 		<link rel="stylesheet" type="text/css" href="style.css" />
+		<!--Font "Quicksand"-->
+		<link href='http://fonts.googleapis.com/css?family=Quicksand:400,700' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
 		<header>
-			<h1 id="title">Comments</h1>
-			<p>A simple app that allows a user to input comments</p>
+			<div class="container">
+				<h1 id="title">Comments</h1>
+				<p id="description">A simple app that allows a user to input comments</p>
+			</div>
 		</header>
 		<main>
-			<!--Note the use of a dash here for our CSS class name that contains multiple words.  This is a CSS convention-->
-			<section class="comment-input">
-				<p>Add Your Comment:</p>
-				<input type="text" /><button>+</button>
-			</section>
+			<div class="container">
+				<!--Note the use of a dash here for our CSS class name that contains multiple words.  This is a CSS convention-->
+				<section class="comment-input">
+					<p>Add Your Comment:</p>
+					<input type="text" class="inputComment" /><button class="submitCommentBtn">+</button>
+				</section>
 
-			<section class="comments">
-				<p>This is the first comment</p>
-				<p>This is the second one!</p>
-				<p>Vanessa gave a third one~</p>
-				<p>Here is another!!!</p>
-			</section>
+				<section class="comments">
+					<p>This is the first comment</p>
+					<p>This is the second one!</p>
+					<p>Vanessa gave a third one~</p>
+					<p>Here is another!!!</p>
+				</section>
+			</div>
 		</main>
 		<footer>
-			<small>this work is released into the public domain</small>
+			<div class="container">
+				<small>this work is released into the public domain</small>
+			</div>
 		</footer>
 
 		<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-		<script src="app.js"></script>
+		<!--<script src="app.js"></script>-->
 	</body>
 </html>
