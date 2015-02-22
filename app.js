@@ -4,44 +4,41 @@ var main = function()
 
 	//window.alert("hello Vane");
 
-	//Create an event listener for the button, so that when the user clicks the button, the comment is
-	//submitted.
+	//Function adds a new comment to the comments section.
+	var addCommentFromInputBox = function()
+	{
+		var $newComment = $("<p>"),	//Create a new paragraph element.
+			commentText = $(".comment-input input").val();	//Store the value of user's comment in new paragraph element.
+
+		$newComment.hide();	//Hide the new paragraph so we can use the fade-in later.
+
+		//Make sure user did not enter an empty comment.
+		if(commentText !== "")
+		{
+			$newComment.text(commentText);	//Put user comment into new paragraph.
+			$(".comments").append($newComment);	//Add new comment to the comments section.
+			$newComment.fadeIn();	//Add cool fade-in effect to make things look purdy.
+			$(".comment-input input").val("");	//Delete input text box contents for better user experience.
+		}
+	};
+
+	//Event listener allows user to enter comment via pressing the submit button.
 	$(".comment-input button").on("click", function(event)
 	{
 		//console.log("hello Vane!");
-		var $new_comment = $("<p>"),	//Create a new paragraph element.
-			comment_text = $(".comment-input input").val(); //Stores the value of the input text box.
 
-		$new_comment.hide();	//Hide the paragraph so that we can use the fade-in function.
-
-		if(comment_text !== "")
-		{
-			$new_comment.text(comment_text);	//Set the text of the new paragraph to the value of the input box.
-			$(".comments").append($new_comment);	//Put the new comment in the comments section.
-			$new_comment.fadeIn();	//New comment will fade-in, making for a cool effect.
-			$(".comment-input input").val("");
-		}
+		addCommentFromInputBox();
 	});
 
-	//Create an event listener for input textbox that listens for the Enter key, so that input is entered
-	//when the user presses Enter.
+	//Event listener allows user to enter comment via pressing the Enter Key on the keyboard.
 	$(".comment-input input").on("keypress", function(event)
 	{
 		//console.log("Key pressed: " + event.keyCode);
+
+		//Enter Key keycode = 13.
 		if(event.keyCode == 13)
 		{
-			var $new_comment;
-			
-			//The following does the same thing as the click button event listener above - I just
-			//shortened it by chaining the functions calls.
-			if($(".comment-input input").val() !== "")
-			{
-				$new_comment = $("<p>").text($(".comment-input input").val());
-				$new_comment.hide();
-				$(".comments").append($new_comment);
-				$new_comment.fadeIn();
-				$(".comment-input input").val("");
-			}
+			addCommentFromInputBox();
 		}
 	});
 };
